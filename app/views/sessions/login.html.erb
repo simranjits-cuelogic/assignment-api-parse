@@ -1,0 +1,22 @@
+<div class="login-box">
+  <%= form_for :user, url: create_login_sessions_path, :html => {:class => '', id: 'loginForm'} do |f| -%>
+    <div class="panel panel-default">
+      <div class="panel-heading"><b>Sign in</b></div>
+      <div class="panel-body">
+        <div class="form-group has-primary has-feedback">
+          <label class="control-label" for="email">Email <span class="regForm text-danger">*</span></label>
+          <%= f.text_field :email, class: "form-control" %>
+          <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+        </div>
+        <div class="form-group has-primary has-feedback">
+          <label class="control-label" for="password">Password <span class="regForm text-danger">*</span></label>
+          <%= f.password_field :password, class: "form-control" %>
+          <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <%= f.submit "Login", :disable_with => 'Logining...', class: "btn btn-success login-btn" %>
+      </div>
+    </div>
+  <% end -%>
+</div>
