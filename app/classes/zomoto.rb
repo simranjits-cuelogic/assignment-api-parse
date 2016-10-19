@@ -1,6 +1,6 @@
-require 'data_fetch'
+# require 'data_fetch'
 class Zomoto
-  include DataFetch
+  # include DataFetch
 
   def initialize(city_id)
     @city_id = city_id
