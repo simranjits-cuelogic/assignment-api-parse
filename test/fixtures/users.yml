@@ -1,21 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+valid:
+  email: dummy@example.com
+  password_digest: MyString
+  name: MyString
+  city: 2
+
 one:
   password_digest: MyString
   name: MyString
-  city: MyString
+  city: 2
 
 two:
   email: MyString
   name: MyString
-  city: MyString
+  city: 2
 
 three:
   email: MyString
   password_digest: MyString
-  city: MyString
+  city: 2
 
 four:
   email: MyString
   password_digest: MyString
   name: MyString
+
+auth:
+  email: dummy@dummy.com
+  password_digest: $2a$10$a2FKcFODC.OOSnALeR2R.u3iSOIOz/8q4seEUGbOcEVlq0xkAk71.
+
+vaild_auth:
+  email: dummy@dummy.com
+  password_digest: $2a$10$a2FKcFODC.OOSnALeR2R.u3iSOIOz/8q4seEUGbOcEVlq0xkAk71.

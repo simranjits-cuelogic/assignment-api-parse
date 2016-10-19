@@ -19,6 +19,7 @@ module Sessionable
 
   def clear_session
     session[:user_id] = nil
+    @current_user = nil
   end
 
   module ClassMethods ; end

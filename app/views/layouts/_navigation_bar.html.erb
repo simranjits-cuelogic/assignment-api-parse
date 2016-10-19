@@ -15,7 +15,7 @@
         <a href="#"><%= current_user.name %> - <%= options_for_city.select{|m| m['id'] == current_user.city }[0]["city"] %></a>
       </li>
       <li>
-        <%= link_to logout_session_path(current_user), method: :delete do %>
+        <%= link_to logout_sessions_path, method: :delete do %>
           <span class="glyphicon glyphicon-log-in"></span> Log Out
         <% end -%>
       </li>

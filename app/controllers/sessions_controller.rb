@@ -26,12 +26,8 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    if current_user.id.to_s == params[:id].to_s
-      clear_session
-      redirect_to login_sessions_path, notice: 'Successfully logged Out.'
-    else
-      redirect_to root_path, notice: 'Invalid request.'
-    end
+    clear_session
+    redirect_to login_sessions_path, notice: 'Successfully logged Out.'
   end
 
   private

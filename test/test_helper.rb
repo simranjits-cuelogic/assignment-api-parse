@@ -20,6 +20,12 @@ class ActiveSupport::TestCase
 
   # including factory girl
   include FactoryGirl::Syntax::Methods
+
+  # Returns true if a test user is logged in.
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
+
 end
 
 class IntegrationTest < MiniTest::Spec

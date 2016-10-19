@@ -7,8 +7,6 @@ Rails.application.routes.draw do
       post 'create_signup'
       get 'login'
       post 'create_login'
-    end
-    member do
       delete 'logout'
     end
   end

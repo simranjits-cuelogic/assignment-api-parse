@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
     # if not stroe Restaurant.restaurants's result into redis correspoind to usr id
     # render json: Restaurant.restaurants
 
-    logger.info "======exist status======#{current_user.exist_records?}"
+    # logger.info "======exist status======#{current_user.exist_records?}"
 
     if current_user.exist_records?
       @restaurants = current_user.get_records
