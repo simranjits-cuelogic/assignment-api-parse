@@ -12,7 +12,7 @@
     <ul class="nav navbar-nav navbar-right">
     <% if current_user %>
       <li>
-        <a href="#"><%= current_user.name %></a>
+        <a href="#"><%= current_user.name %> - <%= options_for_city.select{|m| m['id'] == current_user.city }[0]["city"] %></a>
       </li>
       <li>
         <%= link_to logout_session_path(current_user), method: :delete do %>

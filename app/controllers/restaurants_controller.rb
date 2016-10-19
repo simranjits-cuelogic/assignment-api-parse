@@ -12,8 +12,8 @@ class RestaurantsController < ApplicationController
     if current_user.exist_records?
       @restaurants = current_user.get_records
     else
-      @restaurants = Zomoto.new(current_user.city).restaurants
-      current_user.set_records @restaurants
+      current_user.set_records Zomoto.new(current_user.city).restaurants
+      @restaurants = current_user.get_records
     end
   end
 end

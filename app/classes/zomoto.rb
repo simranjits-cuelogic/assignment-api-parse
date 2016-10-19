@@ -9,6 +9,7 @@ class Zomoto
   def restaurants
     # data = DataFetch::Main.get_restaurents @city_id #NOT IN WORKING lib/*.rb
     data = parse_response_of(scraping_api)
+    # data = parse_response_for_json(scraping_api)
     result = []
 
     # parsing Zomoto data as required format

@@ -1,3 +1,30 @@
-restaurants
+<div id="demo">
+  <h1>Restaurants</h1>
+  <div class="table-responsive-vertical shadow-z-1">
+  <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+        <tr>
+          <th>S No.</th>
+          <th>Restaurant Name</th>
+          <th>Address</th>
+          <th>Reviews Count</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @restaurants.each_with_index do |restaurant, index| %>
+          <tr>
+            <td data-title="ID"><%= index+1%></td>
+            <td data-title="Name"><%= restaurant['restaurant_name']%></td>
+            <td data-title="Link">
+            <%#= restaurant['address'].inspect%>
+            <%= "#{restaurant['address']['city']}(#{restaurant['address']['zip_code'].to_i}) -- #{sprintf('%.2f', restaurant['address']['latitude'])} / #{sprintf('%.2f', restaurant['address']['longitude'])}" %>
+            </td>
+            <td data-title="Status"><%= restaurant['reviews_count']%></td>
+            <td data-title="Status"><%= restaurant['rating']%></td>
+        </tr>
+        <% end %>
 
-<%= @restaurants.inspect%>
+      </tbody>
+    </table>
+  </div>

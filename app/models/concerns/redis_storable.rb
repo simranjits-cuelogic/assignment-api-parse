@@ -7,11 +7,11 @@ module RedisStorable
   def get_records
     data = $redis.get(self.id) || []
 
-    ActiveSupport::JSON.decode data.to_json
+    ActiveSupport::JSON.decode data
   end
 
   def set_records data
-    $redis.set(self.id, data)
+    $redis.set(self.id, data.to_json)
   end
 
   def exist_records?
