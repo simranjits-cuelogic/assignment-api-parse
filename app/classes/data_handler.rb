@@ -32,6 +32,7 @@ class DataHandler
     get_records
   end
 
+# Class method for finding records present in redis records
   def where opts={}
     return [] unless exists?
 
@@ -55,6 +56,8 @@ class DataHandler
     resulted_records
   end
 
+# Class method for finding records correspoinding to
+# address hash present in redis records
   def find_by_address opts={}
     return [] unless exists?
 
@@ -78,6 +81,7 @@ class DataHandler
     resulted_records
   end
 
+protected
   def exists?
     $redis.exists(@key)
   end
@@ -89,19 +93,3 @@ class DataHandler
   end
 
 end
-
-
-    # opts.keys.each do |key|
-    #   # handle for malicious keys
-    #   next unless data[key].present?
-
-    #   if data[key].kind_of Hash
-
-    #   elsif data[key].kind_of Array
-
-    #   else
-    #     # String, Integer, Flaot and  Double
-    #     p "==========#{data[key]} -===== #{opts[key]}"
-    #     resulted_records.push() if data[key] == opts[key]
-    #   end
-    # end
