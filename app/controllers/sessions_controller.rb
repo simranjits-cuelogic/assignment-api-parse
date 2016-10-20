@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  before_filter :check_for_login, only: [
+    :login, :create_login, :signup, :create_signup
+  ]
 
   def login ; end
 
@@ -38,6 +41,10 @@ class SessionsController < ApplicationController
   def login_user
     # todo: change it later with MD5
     session[:user_id] = @user.id
+  end
+
+  def check_for_login
+    redirect_to root_path, notice: 'You are already logged In.' if current_user
   end
 
 end

@@ -4,7 +4,6 @@ class SessionsControllerTest < ActionController::TestCase
   setup do
     @user = users(:valid)
     @auth_user = users(:auth)
-    @auth_user = users(:auth)
   end
 
   test "should get signup new" do

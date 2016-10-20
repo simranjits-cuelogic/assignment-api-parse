@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_uniqueness_of :email
 
+
+  # def restaurants
+  #   Restaurant.all(self.id)
+  # end
+
 end
