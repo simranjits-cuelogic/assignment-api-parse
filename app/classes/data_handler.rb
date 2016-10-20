@@ -8,10 +8,10 @@ class DataHandler
       # class level all
       resulted_records = []
 
-      User.in_batches(of: 1000).each do |user|
+      User.all do |user|
         data_handler = self.new(user.id)
         # check for existence
-        next unless exists?
+        next unless data_handler.exists?
 
         # pushed to collection array
         resulted_records.push(data_handler.get_records)
@@ -87,7 +87,7 @@ protected
   end
 
   def get_records
-    data = $redis.get(@key) || []
+    data = $redis.get(@key) || "".to_json
 
     ActiveSupport::JSON.decode data
   end
